@@ -15,9 +15,6 @@ export const updateSearchCount = async (query: string, movie: Movie) => {
             Query.equal('searchTerm', query)
         ])
 
-        console.log(result)
-        console.log(result.documents.length > 0)
-
         if (result.documents.length > 0) {
             const existingMovie = result.documents[0];
             await database.updateDocument(
